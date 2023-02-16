@@ -1,4 +1,4 @@
-<p align="center">
+<!-- <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
@@ -70,6 +70,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+Nest is [MIT licensed](LICENSE). -->
 
 🏎[NestJs Course for Beginners - Create a REST API](https://www.youtube.com/watch?v=GHTA143_b-s&t=8195s)
+[docker as the server](https://www.docker.com/)
+[prisma as the database](https://www.prisma.io/)
