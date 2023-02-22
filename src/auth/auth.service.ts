@@ -72,5 +72,9 @@ export class AuthService {
     return user;
   }
 
-  async signin(userId: number, email: string) {}
+  async signToken(userId: number, email: string) {
+    const data = {
+      sub: userId,
+    };
+  }
 }
