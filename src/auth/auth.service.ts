@@ -6,10 +6,14 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import { AuthDto } from './dto';
 import * as argon from 'argon2';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable({})
 export class AuthService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    jwt: JwtService,
+  ) {}
   async signup(dto: AuthDto) {
     try {
       // generate the password hash
@@ -59,7 +63,12 @@ export class AuthService {
       dto.password,
     );
     // if password incorrent throw exception
+    if (!pwMatches)
+      throw new ForbiddenException(
+        'Cradentials Correct',
+      );
     // send back the user
-    return { msg: 'I am have signed in' };
+    delete user.hash;
+    return user;
   }
 }

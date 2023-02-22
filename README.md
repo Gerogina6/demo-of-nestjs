@@ -2,3 +2,4 @@
 - [docker as the server](https://www.docker.com/)
 - [prisma as the database](https://www.prisma.io/)
 - [argon2 hashs the passwords](https://github.com/ranisalt/node-argon2#readme)
+- [jwt as the token](https://jwt.io/)
