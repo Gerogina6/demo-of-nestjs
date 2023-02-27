@@ -16,17 +16,19 @@ export class AuthService {
     private jwt: JwtService,
     private config: ConfigService,
   ) {}
+
   async signup(dto: AuthDto) {
+    // generate the password hash
+    const hash = await argon.hash(dto.password);
+    // save the new user in the db
     try {
-      // generate the password hash
-      const hash = await argon.hash(dto.password);
-      // save the new user in the db
       const user = await this.prisma.user.create({
         data: {
           email: dto.email,
           hash,
         },
       });
+
       return this.signToken(user.id, user.email);
     } catch (error) {
       if (
@@ -42,6 +44,7 @@ export class AuthService {
       throw error;
     }
   }
+
   async signin(dto: AuthDto) {
     // find the user by email
     const user =
