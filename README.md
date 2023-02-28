@@ -4,4 +4,5 @@
 - [prisma as the database](https://www.prisma.io/)
 - [argon2 hashs the passwords](https://github.com/ranisalt/node-argon2#readme)
 - [jwt as the token](https://jwt.io/)
-- [e2e as Pactum JS](https://pactumjs.github.io/)
+- [Pactum JS as e2e](https://pactumjs.github.io/)
+- [dotenv to manage develop environment](https://www.npmjs.com/package/dotenv)
